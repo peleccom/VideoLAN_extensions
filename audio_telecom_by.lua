@@ -28,6 +28,7 @@ function parse()
 		html = html .. line
 	end
 	id = string.match(html, 'id="downitem" value="([^"]*)"')
+	art_url = string.match(html, "Zoom.'([^']*)")
 	vlc.msg.info(id)
 	-- TODO: Randomize rand parameter
 	url = "http://audio.telecom.by/_modules/_caudiocat/globalajax.php?rand=fG1eqOIRBBXKfSiS01uo1cyIDRa1G6N&mode=files&item_id="..id
@@ -46,7 +47,7 @@ function parse()
 	for file_url in string.gmatch(html, "&file=([^&]*)&") do
 		path = "http://audio.telecom.by" .. file_url
 		title = table.remove(titles, 1)
-		table.insert(p, {path=path; title=title; description=path })
+		table.insert(p, {path=path; title=title; description=path; arturl=art_url })
 	end
 	return p
   end
