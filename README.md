@@ -10,4 +10,5 @@ INSTALLATION:
 * Linux (all users): `/usr/lib/vlc/lua/playlist/`
 * Linux (current user): `~/.local/share/vlc/lua/playlist/`
 * Mac OS X (all users): `/Applications/VLC.app/Contents/MacOS/share/lua/playlist/`
+
 (create directories if they don\'t exist)
